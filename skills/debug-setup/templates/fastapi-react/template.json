@@ -1,0 +1,13 @@
+{
+  "name": "fastapi-react",
+  "label": "FastAPI + React (Vite)",
+  "description": "Python backend with FastAPI; React + TypeScript + Vite frontend.",
+  "detect": {
+    "backend": ["pyproject.toml", "backend/pyproject.toml"],
+    "frontend": ["package.json", "frontend/package.json"]
+  },
+  "post_install": [
+    "Install the screenshot library: npm install html2canvas (in the frontend directory).",
+    "Add debug-reports.json to .gitignore at the project root."
+  ]
+}
