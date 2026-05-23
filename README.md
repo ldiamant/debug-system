@@ -74,9 +74,9 @@ Reports are stored as JSON in `<repo-root>/debug-reports.json`:
       "route": "/path",
       "url": "http://…",
       "user_agent": "…",
-      "viewport": { "width": …, "height": … },
+      "viewport": { "width": 1440, "height": 900 },
       "navigation_history": ["…"],
-      "recent_interactions": [{ "type": "click", "element": {…} }],
+      "recent_interactions": [{ "type": "click", "element": { "tag": "button", "text": "Submit" } }],
       "console_errors": ["…"],
       "failed_requests": [{ "url": "…", "status": 500 }]
     },
@@ -84,7 +84,7 @@ Reports are stored as JSON in `<repo-root>/debug-reports.json`:
     "user_report": {
       "severity": "critical|medium|minor",
       "description": "…",
-      "tags": ["UI", "Data", …]
+      "tags": ["UI", "Data"]
     }
   }
 ]
