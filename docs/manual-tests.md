@@ -62,10 +62,12 @@ test -f backend/app/schemas/debug.py && echo "backend schema ok"
 test -f frontend/src/components/debug/bug-report-modal.tsx && echo "frontend modal ok"
 test -f frontend/src/components/debug/debug-reporter.tsx && echo "frontend reporter ok"
 test -f frontend/src/lib/debug/event-tracker.tsx && echo "tracker ok"
+test -f frontend/src/lib/debug/types.ts && echo "tracker types ok"
+test -f frontend/src/lib/debug/index.ts && echo "tracker index ok"
 test -f DEBUG_SYSTEM.md && echo "doc ok"
 ```
 
-All six should print `ok`.
+All eight should print `ok`.
 
 ## Scenario 2: /debug-setup with existing DEBUG_SYSTEM.md
 
@@ -178,6 +180,7 @@ cd /tmp && rm -rf debug-system-smoketest
 For scenarios in the real test project, reset the branch:
 
 ```bash
-git checkout main && git branch -D fix/bug-batch-YYYY-MM-DD
+git checkout main
+git branch --list 'fix/bug-batch-*' | xargs -r -n 1 git branch -D
 rm -f debug-reports.json
 ```
