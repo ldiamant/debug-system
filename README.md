@@ -11,16 +11,25 @@ Two skills, both invoked by name:
 
 ## Install
 
-> Verify the exact command against the current Claude Code plugin docs — this is what works at time of writing.
+Claude Code installs plugins through marketplaces. This repo is both — add it as a marketplace, then install the plugin:
 
 ```
-claude plugin install https://github.com/ldiamant/debug-system
+claude plugin marketplace add ldiamant/debug-system
+claude plugin install debug-system@debug-system
+```
+
+Equivalent inside a Claude Code session:
+
+```
+/plugin marketplace add ldiamant/debug-system
+/plugin install debug-system@debug-system
 ```
 
 Both skills become available immediately. To update later:
 
 ```
-claude plugin update debug-system
+claude plugin marketplace update debug-system
+claude plugin update debug-system@debug-system
 ```
 
 ## Quick start

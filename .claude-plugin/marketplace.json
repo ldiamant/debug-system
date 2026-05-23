@@ -1,0 +1,18 @@
+{
+  "name": "debug-system",
+  "description": "Marketplace for the debug-system plugin",
+  "owner": {
+    "name": "Loucas Diamant-Boustead"
+  },
+  "plugins": [
+    {
+      "name": "debug-system",
+      "description": "In-app bug reporting plus a /debug-fix workflow that triages, batches, and ships fixes.",
+      "version": "0.1.2",
+      "source": "./",
+      "author": {
+        "name": "Loucas Diamant-Boustead"
+      }
+    }
+  ]
+}

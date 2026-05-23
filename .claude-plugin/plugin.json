@@ -1,7 +1,7 @@
 {
   "name": "debug-system",
   "description": "In-app bug reporting plus a /debug-fix workflow that triages, batches, and ships fixes.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": { "name": "Loucas Diamant-Boustead" },
   "homepage": "https://github.com/ldiamant/debug-system",
   "repository": "https://github.com/ldiamant/debug-system",
