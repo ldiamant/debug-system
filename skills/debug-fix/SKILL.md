@@ -23,6 +23,8 @@ If `DEBUG_SYSTEM.md` exists at the repo root, read its "Debug Session Changelog"
 
 If the doc is absent, default to `fix/bug-batch-YYYY-MM-DD` and tell the user that's what you'll use.
 
+The session number `N` for any new entry is one more than the highest existing session entry in the changelog (default `1` if the doc is absent or has no prior sessions).
+
 ### 3. Summarise reports
 
 Print a compact markdown table of all reports:
@@ -89,7 +91,7 @@ Inspect the project to figure out what to run before each commit:
 - **TypeScript frontend**: if `tsconfig.app.json` or `tsconfig.json` exists in `frontend/` (or root), the verify command includes `npx tsc --noEmit -p <path>`.
 - **Linting**: if `package.json` has a `lint` script, append `npm run lint`.
 
-Present the chosen command(s) to the user up front via plain text (not a question) and ask whether to keep them, modify, or skip verification.
+Present the chosen command(s) to the user as plain text — state what you discovered, don't pose it as a question. Then use `AskUserQuestion` to confirm: `keep`, `modify`, or `skip verification`.
 
 ### 9. For each batch, in order
 
@@ -114,7 +116,7 @@ Loop through the user-approved batch order. Per batch:
 6. **Pause**. Tell the user: `Batch <X> committed (<short-hash>). Test in the browser, then say "next", "redo", or "stop".`
 
    - `next` → move on to the next batch.
-   - `redo` → revert the batch's commit (`git revert HEAD --no-edit`) and restart the batch from step 1.
+   - `redo` → revert the batch's commit (`git revert HEAD --no-edit`) and restart this batch from sub-step 1 (Investigate) above — do NOT re-run the earlier Process steps.
    - `stop` → break out of the loop; jump to "End of session" with whatever's committed.
 
 ### 10. End of session
